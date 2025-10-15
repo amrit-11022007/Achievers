@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Citizen Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+  <nav class="navbar">
+    <h1>Citizen Login Portal</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="complaint.html">My Complaint</a></li>
+      <li><a href="community.html">Community Complaints</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html" class="login-btn">Login</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <div class="container">
+    <h2 class="page-title">User Login</h2>
+    <form id="loginForm">
+      <label for="aadhar">Aadhar Number:</label>
+      <input type="text" id="aadhar" maxlength="12" required placeholder="Enter 12-digit Aadhar">
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" maxlength="10" required placeholder="Enter 10-digit phone number">
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required placeholder="Enter password">
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <footer>© 2025 Citizen Complaint Portal | Designed for Public Welfare</footer>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const aadhar = document.getElementById('aadhar').value;
+      const phone = document.getElementById('phone').value;
+
+      if(!/^\d{12}$/.test(aadhar)) return alert("Invalid Aadhar number!");
+      if(!/^\d{10}$/.test(phone)) return alert("Invalid phone number!");
+
+      localStorage.setItem('user', JSON.stringify({aadhar, phone}));
+      alert("Login successful!");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
