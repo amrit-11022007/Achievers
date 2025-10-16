@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Complaint System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="checkLogin()">
+
+    <div id="message-box" class="message-box hidden"></div>
+
+    <div class="container">
+        
+        <h1 class="title">Citizen Concern Report</h1>
+        <p class="subtitle">Help us improve your community by submitting a detailed report.</p>
+
+        <form id="complaintForm">
+            
+            <div class="form-group">
+                <label for="complainTitle">Complaint Title / Subject</label>
+                <input 
+                    type="text" 
+                    id="complainTitle" 
+                    name="complainTitle" 
+                    placeholder="E.g., Pothole on Main St. or Broken street light"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category (Defines Department)</label>
+                <select 
+                    id="category" 
+                    name="category" 
+                    required
+                >
+                    <option value="">Select a Category</option>
+                    <option value="public_works">Public Works (Roads, Water, Sewer)</option>
+                    <option value="parks_rec">Parks and Recreation</option>
+                    <option value="environmental">Environmental / Waste Management</option>
+                    <option value="public_safety">Public Safety / Police (Non-Emergency)</option>
+                    <option value="admin">Administrative / Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location of Incident</label>
+                <input 
+                    type="text" 
+                    id="location" 
+                    name="location" 
+                    placeholder="Street address, intersection, or landmark"
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="search-btn"> Search</button>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Detailed Description</label>
+                <textarea 
+                    id="description" 
+                    name="description" 
+                    rows="4" 
+                    placeholder="Provide as much detail as possible: time, specific location details, and extent of the issue."
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="imageUpload">Upload Photo (Optional)</label>
+                <input 
+                    type="file" 
+                    id="imageUpload" 
+                    name="imageUpload" 
+                    accept="image/*"
+                    class="file-input"
+                />
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="submit-button">
+                    Submit Report
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
