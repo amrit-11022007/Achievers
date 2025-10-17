@@ -17,7 +17,7 @@
         <li><a href="community.html">Community Complaints</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li  id="loginbtn"><a href="login.html" class="login-btn">Login</a></li>
+        <li id="loginbtn"><a href="login.html" class="login-btn">Login</a></li>
       </ul>
     </nav>
   </header>
@@ -50,7 +50,7 @@
 
       if (!/^\d{12}$/.test(aadhar)) return alert("Invalid Aadhar number!");
       if (!/^\d{10}$/.test(phone)) return alert("Invalid phone number!");
-      
+
       const savedUser = JSON.parse(localStorage.getItem('user'));
       const loginbtn = document.getElementById('loginbtn');
       if (savedUser && password === savedUser.email && password === savedUser.password) {
